@@ -1,0 +1,10 @@
+<div class="row"><h1>Datos de Venta</h1></div>
+
+<div class="row">
+    <table border = 1>
+        <tr><td>RUT</td><td>Nombre</td><td>Email</td><td>Telefono</td><td>Ciudad</td><td>Comuna</td><td>Calle</td><td>Numero de casa</td></tr>
+        {% for en in envios %}
+        <tr><td>{{en.rut}}</td><td>{{en.nombre}}</td><td>{{en.email}}</td><td>{{en.phone}}</td><td>{{en.ciudad}}</td><td>{{en.comuna}}</td><td>{{en.calle}}</td><td>{{en.casa}}</td></tr>
+        {% endfor %}
+    </table>
+</div>

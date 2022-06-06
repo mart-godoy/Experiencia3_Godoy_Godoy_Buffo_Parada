@@ -1,0 +1,26 @@
+<div class="row"><h1>Datos de Usuario</h1></div>
+
+<div class="row">
+    <table border = 1>
+        <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Nombre</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Telefono</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for us in usuarios %}
+            <tr>
+                <th>{{us.usuario}}</th>
+                <th>{{us.nombre}}</th>
+                <th>{{us.password}}</th>
+                <th>{{us.correo}}</th>
+                <th>{{us.telefono}}</th>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
