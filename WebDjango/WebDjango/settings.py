@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-import cx_oracle
+import cx_Oracle
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -74,23 +74,23 @@ WSGI_APPLICATION = 'WebDjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-# DATABASES = {
-    # 'default': {
-        # 'ENGINE': 'django.db.backends.sqlite3',
-        # 'NAME': BASE_DIR / 'db.sqlite3',
-    # }
-# }
-
-PATH_LIB ='C:/Users/MartinGodoy/Desktop/ProyectoWeb/WebDjango/instantclient_21_3'
-cx_Oracle.init_oracle_client(lib_dir=PATH_LIB)
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': 'pw007d_high',
-        'USER': 'Usuario1',
-        'PASSWORD': 'Perricompras2022',
+    'default':  {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR/ 'db.sqlite3',
 }
 }
+
+#PATH_LIB = 'C:/Users/MartinGodoy/Desktop/ProyectoWeb/WebDjango/instantclient_21_3'
+#cx_Oracle.init_oracle_client(lib_dir=PATH_LIB)
+#DATABASES = {
+    #'default': {
+    #    'ENGINE': 'django.db.backends.oracle',
+    #    'NAME': 'pw007d_high',
+    #    'USER': 'Usuario1',
+    #    'PASSWORD': 'Perricompras2022',
+#}
+#}
 
 
 # Password validation

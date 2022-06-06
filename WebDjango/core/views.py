@@ -1,5 +1,5 @@
 from django.shortcuts import render
-
+from .models import Usuario, Envio
 # Create your views here.
 
 def index(request):
@@ -22,8 +22,37 @@ def nosotros(request):
 
 def venta(request):
     
-    return render(request,'core/venta.html')
+    if request.method== 'POST':
+        ventaformulario = Formvent(request.POST)
+        if ventaformulario.is_valid:
+            Formvent.save()
+
+    return render(request,'core/venta.html',datos)
 
 def creacionuser(request):
+
+    if request.method== 'POST':
+        
+        formularios = Formulario(request.POST)
+        if formularios.is_valid:
+            formulario.save()
+    return render(request,'core/creacionuser.html',datos)
+
+def leer(request):
     
-    return render(request,'core/creacionuser.html')
+    usuarios= Usuario.objects.all()
+
+    datos = {
+        'usuarios': usuarios
+    }
+
+    return render(request, 'core/leer.html',datos)
+
+def ventleer(request):
+
+    envios = Envio.objects.all()
+
+    datos= {
+        'envios': envios
+    }
+    return render(request, 'core/ventleer.html',datos)
