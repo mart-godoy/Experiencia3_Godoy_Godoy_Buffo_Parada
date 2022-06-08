@@ -74,26 +74,26 @@ WSGI_APPLICATION = 'WebDjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
-#DATABASES = {
- #   'default':  {
-  #      'ENGINE': 'django.db.backends.sqlite3',
-   #     'NAME': BASE_DIR/ 'db.sqlite3',
-#}
-#}
-
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.oracle',
-        'NAME': '127.0.0.1:1521/xe',
-        'USER': 'c##prueba',
-        'PASSWORD': 'prueba',
-        'TEST': {
-            'USER': 'default_test',
-            'TBLSPACE': 'default_test_tbls',
-            'TBLSPACE_TMP': 'default_test_tbls_tmp',
-        },
-    },
+    'default':  {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR/ 'db.sqlite3',
 }
+}
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.oracle',
+#        'NAME': '127.0.0.1:1521/xe',
+#        'USER': 'c##prueba',
+#        'PASSWORD': 'prueba',
+#        'TEST': {
+#            'USER': 'default_test',
+#            'TBLSPACE': 'default_test_tbls',
+#            'TBLSPACE_TMP': 'default_test_tbls_tmp',
+#        },
+#    },
+#}
 #PATH_LIB = 'C:/Users/MartinGodoy/Desktop/ProyectoWeb/WebDjango/instantclient_21_3'
 #cx_Oracle.init_oracle_client(lib_dir=PATH_LIB)
 

@@ -22,16 +22,8 @@ def nosotros(request):
 
 
 def venta(request):
-    data= {
-        'venta': Formvent()
-    }
 
-    if request.method== 'POST':
-        ventaformulario = Formvent(request.POST)
-        if ventaformulario.is_valid:
-            Formvent.save()
-
-    return render(request,'core/venta.html',data)
+    return render(request,'core/venta.html')
 
 def creacionuser(request):
 
@@ -63,3 +55,7 @@ def registrarUsuario(request):
     usuario = Usuario.objects.create(usuario=usuario,nombre=nombre,password=password,correo=correo,telefono=telefono)
 
     return redirect('/')
+
+def modificar(request):
+
+    return render(request, 'core/modificar.hmtl')
