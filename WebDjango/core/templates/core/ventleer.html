@@ -48,7 +48,8 @@
     <table border = 3>
         <tr><td>RUT</td><td>Nombre</td><td>Email</td><td>Telefono</td><td>Ciudad</td><td>Comuna</td><td>Calle</td><td>Numero de casa</td></tr>
         {% for en in envios %}
-        <tr><td>{{en.rut}}</td><td>{{en.nombre}}</td><td>{{en.email}}</td><td>{{en.phone}}</td><td>{{en.ciudad}}</td><td>{{en.comuna}}</td><td>{{en.calle}}</td><td>{{en.casa}}</td></tr>
+        <tr><td>{{en.rut}}</td><td>{{en.nombre}}</td><td>{{en.email}}</td><td>{{en.phone}}</td><td>{{en.ciudad}}</td><td>{{en.comuna}}</td><td>{{en.calle}}</td><td>{{en.casa}}</td><td><a href="modEnvioo"><input type="submit" value="Modificar" class="formulario__btn" style="background-color: #089fe0; padding: 0em 0.5em 0.5em 0.2em; " ></a></td></tr>
+        
         {% endfor %}
     </table>
 </div>
