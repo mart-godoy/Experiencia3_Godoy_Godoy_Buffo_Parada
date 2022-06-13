@@ -31,12 +31,16 @@
               <li class="nav-item">
                 <a class="nav-link active" href="/nosotros" style="color: white;">Sobre Nosotros  </a> 
               </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="/creacionuser" style="color: white;">Crea tu cuenta</a> 
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="/leer" style="color: white;">Ver usuario </a>
-              </li>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: white;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Usuario
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/creacionuser">Crea tu cuenta</a></li>
+                <li><a class="dropdown-item" href="/leer">Ver tu cuenta</a></li>
+              </ul>
+            </li>
             </ul>
           </div>
         </div>
@@ -56,12 +60,11 @@
     <h1 style="color: black;">Modifica tu usuario</h1>
     
     <form action="/modifUsuario/" autocomplete="off" class="formulario" id="ormulario" method="POST">{% csrf_token %}
-        {% for mod in modificara %}
       <!-- Grupo: Usuario -->
       <div class="formulario__grupo" id="grupo__usuario">
         <label for="usuario" class="formulario__label" style="color: black;">Usuario</label>
         <div class="formulario__grupo-input">
-          <input type="text" class="formulario__input" name="usuario" id="usuario" value="{{mod.usuario}}" placeholder="Ingresa tu nombre de usuario">
+          <input type="text" class="formulario__input" name="usuario" id="usuario" value="{{modUser.usuario}}" placeholder="Ingresa tu nombre de usuario" readonly required>
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
         <p class="formulario__input-error" style="color: black;">El usuario tiene que ser de 6 a 16 caracteres y solo puede contener numeros, letras y guion bajo.</p>
@@ -71,7 +74,7 @@
       <div class="formulario__grupo" id="grupo__nombre">
         <label for="nombre" class="formulario__label" style="color: black;">Nombre</label>
         <div class="formulario__grupo-input">
-          <input type="text" class="formulario__input" name="nombre" id="nombre" value="{{mod.nombre}}" placeholder="Ingresa tu nombre ">
+          <input type="text" class="formulario__input" name="nombre" id="nombre" value="{{modUser.nombre}}" placeholder="Ingresa tu nombre ">
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
         <p class="formulario__input-error" style="color: black;"> El nombre solo debe contener letras</p>
@@ -81,7 +84,7 @@
       <div class="formulario__grupo" id="grupo__password">
         <label for="password" class="formulario__label" style="color: black;">Contraseña</label>
         <div class="formulario__grupo-input">
-          <input type="password" class="formulario__input" name="password" id="password" value="{{mod.password}}">
+          <input type="password" class="formulario__input" name="password" id="password" value="{{modUser.password}}">
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
         <p class="formulario__input-error" style="color: black;">La contraseña debe tener numeros y letras.</p>
@@ -101,7 +104,7 @@
       <div class="formulario__grupo" id="grupo__correo">
         <label for="correo" class="formulario__label" style="color: black;">Correo Electrónico</label>
         <div class="formulario__grupo-input">
-          <input type="email" class="formulario__input" name="correo" id="correo" value="{{mod.correo}}" placeholder="correo@correo.com" >
+          <input type="email" class="formulario__input" name="correo" id="correo" value="{{modUser.correo}}" placeholder="correo@correo.com" >
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
         <p class="formulario__input-error" style="color: black;">El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.</p>
@@ -111,7 +114,7 @@
       <div class="formulario__grupo" id="grupo__telefono">
         <label for="telefono" class="formulario__label" style="color: black;">Teléfono</label>
         <div class="formulario__grupo-input">
-          <input type="text" class="formulario__input" name="telefono" id="telefono" value="{{mod.telefono}}" placeholder="+56812345678" >
+          <input type="text" class="formulario__input" name="telefono" id="telefono" value="{{modUser.telefono}}" placeholder="+56812345678" >
           <i class="formulario__validacion-estado fas fa-times-circle"></i>
         </div>
         <p class="formulario__input-error" style="color: black;">El numero debe empezar con "+569" o "569" y tener 11 numeros en total</p>
@@ -136,9 +139,7 @@
       <div class="form-boton">
         <a href="/leer"><input type="submit" value="Editar" class="formulario__btn" style="background-color: #089fe0; padding: 0em 0.5em 0.5em 0.2em; " ></a>
         <input type="reset" value="Limpiar" class="formulario__btn" onfocus="MessageEvent">
-         <p class="formulario__mensaje-exito" id="formulario__mensaje-exito" style="color: black;">Haz creado tu cuenta de manera exitosa.</p>
     </div>
-    {% endfor %}
     </form>
 
     

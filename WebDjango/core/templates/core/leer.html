@@ -30,11 +30,13 @@
             <li class="nav-item">
               <a class="nav-link active" href="nosotros" style="color: white;">Sobre Nosotros  </a> 
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="creacionuser" style="color: white;">Crea tu cuenta</a> 
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="leer" style="color: white;">Ver usuario </a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: white;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Usuario
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="creacionuser">Crea tu cuenta</a></li>
+              </ul>
             </li>
           </ul>
         </div>
@@ -89,16 +91,14 @@ th, td {
           </tr>
       </thead>
       <tbody>
-          {% for us in usuarios %}
           <tr>
-              <th>{{us.usuario}}</th>
-              <th>{{us.nombre}}</th>
-              <th>{{us.password}}</th>
-              <th>{{us.correo}}</th>
-              <th>{{us.telefono}}</th>
-              <th><a href="modUsuario"><input type="submit" value="Modificar" class="formulario__btn" style="background-color: #089fe0; padding: 0em 0.5em 0.5em 0.2em; " ></a></th> 
+              <th>{{usuarios.usuario}}</th>
+              <th>{{usuarios.nombre}}</th>
+              <th>{{usuarios.password}}</th>
+              <th>{{usuarios.correo}}</th>
+              <th>{{usuarios.telefono}}</th>
+              <th><a href="modUsuario/{{us.usuario}}"><input type="submit" value="Modificar" class="formulario__btn" style="background-color: #089fe0; padding: 0em 0.5em 0.5em 0.2em; " ></a></th> 
           </tr>
-          {% endfor %}
       </tbody>
   </table>
 </div>
@@ -109,4 +109,10 @@ table {
   width: 100%;
 
 }
+</style>
 
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>  
+
+</body>
+</html>

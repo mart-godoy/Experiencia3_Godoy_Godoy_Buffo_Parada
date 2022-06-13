@@ -33,12 +33,16 @@
             <li class="nav-item">
               <a class="nav-link active" href="/nosotros" style="color: white;">Sobre Nosotros  </a> 
             </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="/creacionuser" style="color: white;">Crea tu cuenta</a> 
-            </li>
-            <li class="nav-item">
-              <a class="nav-link active" href="/leer" style="color: white;">Ver usuario </a>
-            </li>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" style="color: white;" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Usuario
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/creacionuser">Crea tu cuenta</a></li>
+              <li><a class="dropdown-item" href="/leer">Ver tu cuenta</a></li>
+            </ul>
+          </li>
             </ul>
         </div>
       </div>
@@ -48,9 +52,9 @@
   <!--Fin barra de navegacion-->
 
 <div class="form1">
-    <form class="container-form" action="/modifEnvioo/" autocomplete="off" method="POST" id="Formvent" >
+    <form class="container-form" action="/modifEnvio/" autocomplete="off" method="POST" id="Formvent" >
       {% csrf_token %}
-      <input type="text" name="nombre" placeholder="Nombre completo" class="form__input" value="{{modificar.nombre}}" pattern="[A-Za-z A-Za-z A-Za-z A-Za-z]+" required>
+      <input type="text" name="nombre" placeholder="Nombre completo" class="form__input" value="{{modificar.nombre}}" minlength="20" pattern="[A-Za-z A-Za-z A-Za-z A-Za-z]+" required>
       <input type="email" name="email" placeholder="Email" class="form__input" value="{{modificar.email}}" required>
       <input type="text" id="rut" name="rut" class="form__input" value="{{modificar.rut}}" required oninput="checkRut(this)" placeholder="Ingrese RUT" >
       <input type="tel" id="phone" name="phone" pattern="[0-9]{9}" value="{{modificar.phone}}" class="form__input" placeholder="N°Celular" required>

@@ -10,6 +10,7 @@ class Usuario(models.Model):
     usuario = models.CharField(max_length=16, primary_key=True, verbose_name='Nombre de Usuario')
     nombre = models.CharField(max_length=40, verbose_name='Nombre Persona')
     password = models.CharField(max_length=30,verbose_name='Password')
+    repcontraseña = models.CharField(verbose_name='Repetir contraseña', max_length=100, default='')
     correo = models.EmailField(max_length=100,verbose_name='Correo electronico')
     telefono = models.IntegerField(verbose_name='Telefono')
 
